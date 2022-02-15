@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
 public class DashboardActivity extends AppCompatActivity {
-AppCompatButton btn1,btn2,btn3,btn4,btn5;
+AppCompatButton btn1,btn2,btn3,btn4,btn5,btn6;
+SharedPreferences mypreferences;//object create
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,9 @@ AppCompatButton btn1,btn2,btn3,btn4,btn5;
         btn3=(AppCompatButton) findViewById(R.id.btn3);
         btn4=(AppCompatButton) findViewById(R.id.btn4);
         btn5=(AppCompatButton) findViewById(R.id.btn5);
+        btn6=(AppCompatButton) findViewById(R.id.btn6);
+
+        mypreferences=getSharedPreferences("login",MODE_PRIVATE);//object link
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +56,18 @@ AppCompatButton btn1,btn2,btn3,btn4,btn5;
           @Override
           public void onClick(View v) {
               Intent i=new Intent(getApplicationContext(),ViewWebsite.class);
+              startActivity(i);
+          }
+      });
+      btn6.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+             //navigate to mainActiviy while click logout
+             SharedPreferences.Editor myEdit=mypreferences.edit();
+             myEdit.clear();
+             myEdit.commit();
+
+              Intent i=new Intent(getApplicationContext(),MainActivity.class);
               startActivity(i);
           }
       });

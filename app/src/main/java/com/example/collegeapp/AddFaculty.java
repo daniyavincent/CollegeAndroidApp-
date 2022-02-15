@@ -45,6 +45,7 @@ public class AddFaculty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),DashboardActivity.class);
+                startActivity(i);
 
             }
         });

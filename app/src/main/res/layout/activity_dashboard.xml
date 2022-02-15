@@ -38,4 +38,11 @@
         android:id="@+id/btn5"
         android:background="@color/button"
         android:layout_margin="10dp"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        android:id="@+id/btn6"
+        android:background="@color/button"
+        android:layout_margin="10dp"/>
 </LinearLayout>

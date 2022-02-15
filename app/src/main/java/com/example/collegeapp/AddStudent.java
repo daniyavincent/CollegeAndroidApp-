@@ -44,6 +44,7 @@ String getName,getRollNumber,getAdmissionNumber,getCollege;
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),DashboardActivity.class);
+                startActivity(i);
 
             }
         });
